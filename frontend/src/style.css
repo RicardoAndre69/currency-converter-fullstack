@@ -1,22 +1,110 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo com gradiente verde elegante */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    135deg,
+    #0f5132 0%,
+    #198754 40%,
+    #20c997 100%
+  );
+}
+
+/* Container principal */
 .container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 45px 35px;
+  border-radius: 18px;
   text-align: center;
-  font-family: sans-serif;
+
+  /* Sombra mais elegante */
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.25),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito leve ao passar o mouse */
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 35px 70px rgba(0, 0, 0, 0.3),
+    0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+.container h1 {
+  color: #14532d;
+  margin-bottom: 30px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Inputs */
 input {
-  margin: 5px;
-  padding: 5px;
-  width: 100px;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid #d1fae5;
+  background-color: #f0fdf4;
+  font-size: 14px;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
+input:focus {
+  outline: none;
+  border-color: #198754;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.25);
+}
+
+/* Botão */
 button {
-  margin-top: 10px;
-  padding: 5px 10px;
+  width: 100%;
+  padding: 13px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Resultado */
+.container p {
+  margin-top: 22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #065f46;
+  background-color: #ecfdf5;
+  padding: 12px;
+  border-radius: 10px;
 }
