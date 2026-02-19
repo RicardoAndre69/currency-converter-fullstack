@@ -28,16 +28,19 @@ function App() {
   return (
     <div className="container">
       <h1>Currency Converter</h1>
+      <label>Base currency:</label>
       <input
         value={base}
         onChange={(e) => setBase(e.target.value.toUpperCase())}
         placeholder="Base currency"
       />
+      <label>Target currency:</label>
       <input
         value={target}
         onChange={(e) => setTarget(e.target.value.toUpperCase())}
         placeholder="Target currency"
       />
+      <label>Amount:</label>
       <input
         type="number"
         value={amount}
