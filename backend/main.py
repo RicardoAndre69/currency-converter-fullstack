@@ -8,18 +8,15 @@ import requests
 
 app = FastAPI()
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+origins = ["https://currency-converter-fullstack.vercel.app"]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],  # Permite todos os métodos (GET, POST, etc.)
-    allow_headers=["*"],  # Permite todos os cabeçalhos
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
 
 class ConversionRequest(BaseModel):
     base: str
