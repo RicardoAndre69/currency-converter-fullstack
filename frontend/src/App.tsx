@@ -1,12 +1,7 @@
 import { useState } from "react";
 
-const api = (path: string, options?: RequestInit) => {
-  console.log("API URL:", import.meta.env.VITE_API_URL);
-  if (!import.meta.env.VITE_API_URL) {
-    throw new Error("VITE_API_URL is not defined!");
-  }
-  return fetch(`${import.meta.env.VITE_API_URL}${path}`, options);
-};
+const api = (path: string, options?: RequestInit) =>
+  fetch(`${import.meta.env.VITE_API_URL}${path}`, options);
 
 interface ConversionResponse {
   converted?: number;
