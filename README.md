@@ -26,7 +26,7 @@ This project converts currencies in real time using a public exchange rate API.
 ---
 
 ## 📦 Project Structure
-
+```bash
 currency-converter-fullstack/
 │
 ├── backend/
@@ -40,7 +40,7 @@ currency-converter-fullstack/
 │ └── package.json
 │
 └── README.md
-
+```
 ---
 
 ## ▶️ Running Locally (Docker Backend)
