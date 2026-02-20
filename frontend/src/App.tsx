@@ -1,5 +1,13 @@
 import { useState } from "react";
 
+const api = (path: string, options?: RequestInit) => {
+  console.log("API URL:", import.meta.env.VITE_API_URL);
+  if (!import.meta.env.VITE_API_URL) {
+    throw new Error("VITE_API_URL is not defined!");
+  }
+  return fetch(`${import.meta.env.VITE_API_URL}${path}`, options);
+};
+
 interface ConversionResponse {
   converted?: number;
   error?: string;
@@ -11,9 +19,10 @@ function App() {
   const [amount, setAmount] = useState<number>(1);
   const [result, setResult] = useState<string | number>("");
 
+
   const convert = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/convert", {
+      const res = await api("/convert", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ base, target, amount }),
