@@ -47,25 +47,35 @@ currency-converter-fullstack/
 
 
 ### 1️⃣ Build backend image
+```bash
 docker build -t currency-converter-backend ./backend
+```
 
 ### 2️⃣ Run backend
+```bash
 docker run -d -p 8000:8000 --name currency-backend currency-converter-backend
+```
 
 Backend will run at:
+```bash
 http://localhost:8000
-
+```
 ---
 
 ## ▶️ Run Frontend
 Inside frontend folder:
-
+```bash
 npm install
+```
+
+```bash
 npm run dev
+```
 
 Frontend runs at:
+```bash
 http://localhost:5173
-
+```
 ---
 
 ## 📌 Features
