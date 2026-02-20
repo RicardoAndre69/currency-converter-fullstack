@@ -16,7 +16,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",  # Para o seu ambiente local
-        "https://currency-converter-fullstack-kqd8xvhie-ricardoandre69s-projects.vercel.app"  # Para o seu frontend no Vercel
+        "https://currency-converter-fullstack.vercel.app"  # Para o seu frontend no Vercel
     ], 
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos os métodos (GET, POST, etc.)
