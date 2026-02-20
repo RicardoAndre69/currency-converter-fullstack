@@ -14,7 +14,7 @@ if __name__ == "__main__":
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], 
+    allow_origins=["http://localhost:5173", "https://currency-converter-fullstack-kqd8xvhie-ricardoandre69s-projects.vercel.app"],  # Adicione a URL do Vercel
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,12 +28,16 @@ class ConversionRequest(BaseModel):
 
 def get_exchange_rate(base_currency: str, target_currency: str):
     url = f"https://api.exchangerate-api.com/v4/latest/{base_currency.upper()}"
-    response = requests.get(url)
-    data = response.json()
-
-    if target_currency.upper() in data["rates"]:
-        return data["rates"][target_currency.upper()]
-    else:
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  
+        data = response.json()
+        if target_currency.upper() in data["rates"]:
+            return data["rates"][target_currency.upper()]
+        else:
+            return None
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching exchange rates: {e}")
         return None
 
 @app.get("/")
