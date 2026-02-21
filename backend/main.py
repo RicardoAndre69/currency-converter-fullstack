@@ -49,6 +49,8 @@ def root():
 def convert(req: ConversionRequest):
     rate = get_exchange_rate(req.base, req.target)
     if rate:
-        return {"converted": req.amount * rate}
+        # Arredondar o valor convertido para 2 casas decimais
+        converted_amount = round(req.amount * rate, 2)
+        return {"converted": converted_amount}
     else:
         return {"error": "Currency not found or API error"}
