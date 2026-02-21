@@ -8,14 +8,17 @@ import requests
 
 app = FastAPI()
 
-origins = ["https://currency-converter-fullstack.vercel.app"]
+origins = [
+    "https://currency-converter-fullstack-nya1tyu8c-ricardoandre69s-projects.vercel.app",  # Adicione seu domínio exato
+    "https://*.vercel.app", 
+]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=origins, 
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"], 
+    allow_headers=["*"],  
 )
 
 class ConversionRequest(BaseModel):
