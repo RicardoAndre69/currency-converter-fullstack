@@ -17,7 +17,7 @@ COPY . .
 RUN chmod +x start.sh
 
 # Expõe porta que a API vai rodar
-EXPOSE 8000
+EXPOSE 8080
 
 # Comando para rodar o script de inicialização
 CMD ["./start.sh"]
