@@ -8,11 +8,7 @@ import requests
 
 app = FastAPI()
 
-origins = [
-    "https://currency-converter-fullstack-nya1tyu8c-ricardoandre69s-projects.vercel.app",  # Adicione seu domínio exato
-    "https://*.vercel.app", 
-    "http://localhost:5173",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
