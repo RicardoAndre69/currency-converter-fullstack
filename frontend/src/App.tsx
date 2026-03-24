@@ -38,6 +38,7 @@ function App() {
         onChange={(e) => setBase(e.target.value.toUpperCase())}
         placeholder="Base currency"
       />
+      
       <label>Target currency:</label>
       <input
         value={target}
